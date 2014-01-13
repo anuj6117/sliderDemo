@@ -26,54 +26,83 @@ under the License.
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
 		<title>Facebook Slider</title>
 		<link rel="stylesheet" href="external/jqueryMobile/jquery.mobile.css" />
+		<link rel="stylesheet" type="text/css" href="external/slider/snap.css" />
+		<link rel="stylesheet" type="text/css" href="external/slider/slider.css" />
 		<script src="external/jqueryMobile/jquery.js"></script>
 		<script src="external/jqueryMobile/jquery.mobile.js"></script>
-		<link rel="stylesheet" type="text/css" href="external/slider/snap.css" />
-		<link rel="stylesheet" type="text/css" href="external/slider/demo.css" />
+		<script src="external/slider/snap.js"></script>
+		<script src="external/slider/slider.js"></script>
 	</head>
 	<body>
 		<div class="snap-drawers">
 			<div class="snap-drawer snap-drawer-left">
 				<ul>
 					<li>
-						<a href="http://www.google.com">Google</a>
+						<a href="#" onclick="openPage1()">Page 1</a>
 					</li>
 					<li>
-						<a href="http://www.msn.com">MSN</a>
+						<a href="#" onclick="openPage2()">Page 2</a>
 					</li>
 					<li>
-						<a href="http://www.fb.com">Facebook</a>
+						<a href="#" onclick="openPage3()">Page 3</a>
 					</li>
 				</ul>
-
 			</div>
-			<div class="snap-drawer snap-drawer-right"></div>
 		</div>
-
 		<div id="content" class="snap-content">
-			<div id="toolbar">
-				<a href="#" id="open-left"></a>
-				<h1>Default</h1>
+			<div data-role="page" id="page1">
+				<div data-role="header" data-position="fixed">
+					<a href="#" onclick="openSlider()" class="ui-btn-left" data-role="button" data-icon="grid" data-iconpos="notext">Slider</a>
+					<h1>Slider Demo</h1>
+				</div>
+
+				<div data-role="main" class="ui-content">
+					<p>
+						Page 1 content goes here.
+					</p>
+				</div>
+
+				<div data-role="footer" data-position="fixed">
+					<h4>&copy OodlesTechnologies 2014</h4>
+				</div>
+			</div>
+			<div data-role="page" id="page2">
+				<div data-role="header" data-position="fixed">
+					<a href="#" onclick="openSlider()" class="ui-btn-left" data-role="button" data-icon="grid" data-iconpos="notext">Slider</a>
+					<h1>Slider Demo</h1>
+				</div>
+
+				<div data-role="main" class="ui-content">
+					<p>
+						page 2 content goes here.
+					</p>
+				</div>
+
+				<div data-role="footer" data-position="fixed">
+					<h4>&copy OodlesTechnologies 2014</h4>
+				</div>
+			</div>
+			<div data-role="page" id="page3">
+				<div data-role="header" data-position="fixed">
+					<a href="#" onclick="openSlider()" class="ui-btn-left" data-role="button" data-icon="grid" data-iconpos="notext">Slider</a>
+					<h1>Slider Demo</h1>
+				</div>
+
+				<div data-role="main" class="ui-content">
+					<p>
+						Page 3 content goes here.
+					</p>
+				</div>
+
+				<div data-role="footer" data-position="fixed">
+					<h4>&copy OodlesTechnologies 2014</h4>
+				</div>
 			</div>
 		</div>
-		<script type="text/javascript" src="external/slider/snap.js"></script>
 		<script type="text/javascript">
 			var snapper = new Snap({
 				element : document.getElementById('content')
 			});
-
-		</script>
-		<script type="text/javascript" src="external/slider/demo.js"></script>
-		<script>
-			! function(d, s, id) {
-				var js, fjs = d.getElementsByTagName(s)[0];
-				if (!d.getElementById(id)) {
-					js = d.createElement(s);
-					js.id = id;
-					js.src = "https://platform.twitter.com/widgets.js";
-					fjs.parentNode.insertBefore(js, fjs);
-				}
-			}(document, "script", "twitter-wjs");
 		</script>
 	</body>
 </html>
